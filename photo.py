@@ -471,12 +471,12 @@ better photo.
     #--------------------------------------------------------------------------
     # dump ranked list to screen
 
-    print "Final Ranking:"
+    print ("Final Ranking:")
 
     with open(ranked_txt, 'r') as fd:
         text = fd.read()
 
-    print text
+    print (text)
 
 
 
