@@ -30,7 +30,7 @@ function getAverageRating(photo) {
   // Define some photos
   var photo1 = {
     name: "Sunset at the Beach",
-    votes: [5, 4, 5, 5]
+    votes: [5, 4, 5, 5,5,5]
   };
   var photo2 = {
     name: "Mountain Landscape",
@@ -38,7 +38,7 @@ function getAverageRating(photo) {
   };
   var photo3 = {
     name: "Cityscape at Night",
-    votes: [5, 5]
+    votes: [5, 5,4,5,4,4]
   };
   var photos = [photo1, photo2, photo3];
   
