@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <img id="pack" src="image/pack.jpg" alt="Unopened pack">
+    <img id="player2" src="image/pack.jpg" alt="Place for a second player after the pack is opened">
+    <img id="player3" src="image/pack.jpg" alt="Place for a third player after the pack is opened">
+    <img id="veld" src="image/veld.jpg" alt="Football field with positions">
+
+
+
+</body>
+<script src="scripts/packs.js">
+    var playerImg;
+    var playerImg2;
+    var playerImg3;
+    var playerArray = ["A1.png", "A2.png", "A3.png", "A4.png", "A5.png", "M1.png", "M2.png", "M3.png", "M4.png", "M5.png", "V1.png", "V2.png", "V3.png", "V4.png", "V5.png", "D1.png", "D2.png", "D3.png"];
+
+    function openPack() {
+        var randomPlayer = (Math.floor(Math.random() * 18) + 1);
+        playerImg = playerArray[randomPlayer - 1];
+        document.getElementById("pack").src = "image/" + playerImg;
+
+        var randomPlayer2 = (Math.floor(Math.random() * 18) + 1);
+        playerImg2 = playerArray[randomPlayer2 - 1];
+        document.getElementById("player2").src = "image/" + playerImg2;
+
+        var randomPlayer3 = (Math.floor(Math.random() * 18) + 1);
+        playerImg3 = playerArray[randomPlayer3 - 1];
+        document.getElementById("player3").src = "image/" + playerImg3;
+    }
+
+    document.querySelectorAll("img#player2")[0].addEventListener("click", openPack);
+
+</script>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="imageForm">
+        <table border=3>
+            <tr align="center">
+                <td>
+                    <input onclick="displayImage();" type=button value="Click Here">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="image/blank.jpg" name="canvas" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script language="javascript">
+
+        var imagesArray = [
+            'image/img-1.jpg',
+            'image/img-2.jpg',
+            'image/img-3.jpg',
+            'image/img-4.jpg',
+            'image/img-5.jpg',
+        ];
+
+        var usedImages = {};
+        var usedImagesCount = 0;
+
+        function displayImage() {
+
+            var num = Math.floor(Math.random() * (imagesArray.length));
+            if (!usedImages[num]) {
+                document.canvas.src = imagesArray[num];
+                usedImages[num] = true;
+                usedImagesCount++;
+                if (usedImagesCount === imagesArray.length) {
+                    usedImagesCount = 0;
+                    usedImages = {};
+                }
+            } else {
+                displayImage();
+            }
+        }
+
+    </script>
+</body>
+
+</html>
