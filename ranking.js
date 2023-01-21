@@ -43,7 +43,7 @@ function getAverageRating(photo) {
   var photos = [photo1, photo2, photo3];
   
   // Add a new vote to photo2
-  addVote(photo2, 4);
+  addVote(photo2, 10);
   
   // Sort the photos by average rating
   sortPhotosByRating(photos);

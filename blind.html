@@ -17,7 +17,7 @@
             <tr>
                 <td>
                     <img onclick="displayImage();" src="image/blank.jpg" name="canvas" style="height: 500px;width: 500px;">
-                    <img onclick="displayImage();" src="image/blank.jpg" name="canva" style="height: 500px;width: 500px;">
+                    <img onclick="displayImage();" src="image/img-1.jpg" name="canva" style="height: 500px;width: 500px;">
                    
                 </td>
             </tr>
@@ -30,7 +30,11 @@
             'image/img-2.jpg',
             'image/img-3.jpg',
             'image/img-4.jpg',
-            'image/img-5.jpg',
+            'image/pack.jpg',
+            'image/veld.jpg',
+            'image/blank.jpg',
+            'image/blank.jpg',
+
         ];
 
         var usedImages = {};
@@ -38,7 +42,8 @@
 
         function displayImage() {
 
-            var num = Math.floor(Math.random() * (imagesArray.length));
+            const num = Math.floor(Math.random() * (imagesArray.length));
+            
             if (!usedImages[num]) {
                 document.canvas.src = imagesArray[num];
                 document.canva.src = imagesArray[num+1];
