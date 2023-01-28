@@ -20,20 +20,20 @@
     var playerImg;
     var playerImg2;
     var playerImg3;
-    var playerArray = ["A1.png", "A2.png", "A3.png", "A4.png", "A5.png", "M1.png", "M2.png", "M3.png", "M4.png", "M5.png", "V1.png", "V2.png", "V3.png", "V4.png", "V5.png", "D1.png", "D2.png", "D3.png"];
+    var playerArray = ["image/blank.jpg", "image/daytime.jpeg", "image/nighttime.jpeg", "image/veld.jpg", "image/img-1.jpg", "img-2.jpg", "M2.png", "M3.png", "M4.png", "M5.png", "V1.png", "V2.png", "V3.png", "V4.png", "V5.png", "D1.png", "D2.png", "D3.png"];
 
     function openPack() {
         var randomPlayer = (Math.floor(Math.random() * 18) + 1);
         playerImg = playerArray[randomPlayer - 1];
-        document.getElementById("pack").src = "image/" + playerImg;
+        document.getElementById("pack").src = "image/blank" + playerImg;
 
         var randomPlayer2 = (Math.floor(Math.random() * 18) + 1);
         playerImg2 = playerArray[randomPlayer2 - 1];
-        document.getElementById("player2").src = "image/" + playerImg2;
+        document.getElementById("player2").src = "image/daytime" + playerImg2;
 
         var randomPlayer3 = (Math.floor(Math.random() * 18) + 1);
         playerImg3 = playerArray[randomPlayer3 - 1];
-        document.getElementById("player3").src = "image/" + playerImg3;
+        document.getElementById("player3").src = "image/nighttime" + playerImg3;
     }
 
     document.querySelectorAll("img#player2")[0].addEventListener("click", openPack);
