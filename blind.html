@@ -45,10 +45,12 @@
         function displayImage() {
 
             const num = Math.floor(Math.random() * (imagesArray.length));
+            const num2 = Math.floor(Math.random() * (imagesArray.length));
+
             
-            if (!usedImages[num]) {
+            if (!usedImages[num] && num!=num2) {
                 document.canvas.src = imagesArray[num];
-                document.canva.src = imagesArray[num+1];
+                document.canva.src = imagesArray[num2];
                 usedImages[num] = true;
                
                 usedImagesCount++;
