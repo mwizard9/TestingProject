@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function VotingCounter({ initialCount }) {
-  const [count, setCount] = useState(initialCount);
+  const [count, setCount] = useState(initialCount=0);
 
   return (
     <div>

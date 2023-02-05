@@ -6,12 +6,14 @@ import Elo from './Components/Elo';
 import ImageVoting from './Components/ImageVoting';
 
 import RandomImage from './Components/RandomImage';
+import SelectImage from './Components/SelectImage';
 import VotingCounter from './Components/VotingCounter';
 
 
 function App() {
   return (
     <div className="App">
+      <SelectImage/>
      <ImageVoting/>
      <CameraTest/>
      <VotingCounter/>
