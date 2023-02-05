@@ -1,30 +1,51 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-const Elo = ({ player1, player2, result }) => {
-  const [player1Rating, setPlayer1Rating] = useState(player1.rating);
-  const [player2Rating, setPlayer2Rating] = useState(player2.rating);
+const Elo = ({ players, matches }) => {
+  const [ratings, setRatings] = useState(players.map(p => p.rating));
+
+  const calculateElo = (ratingA, ratingB, result) => {
+    const k = 32;
+    const expectedScoreA = 1 / (1 + 10 ** ((ratingB - ratingA) / 400));
+    const expectedScoreB = 1 / (1 + 10 ** ((ratingA - ratingB) / 400));
+    const newRatingA = ratingA + k * (result - expectedScoreA);
+    const newRatingB = ratingB + k * (1 - result - expectedScoreB);
+    return [newRatingA, newRatingB];
+  };
 
   useEffect(() => {
-    const expectedScore1 = 1 / (1 + 10 ** ((player2Rating - player1Rating) / 400));
-    const expectedScore2 = 1 / (1 + 10 ** ((player1Rating - player2Rating) / 400));
-    const k = 32;
-
-    setPlayer1Rating(player1Rating + k * (result - expectedScore1));
-    setPlayer2Rating(player2Rating + k * (1 - result - expectedScore2));
-  }, [player1, player2, result]);
+    let updatedRatings = [...ratings];
+    matches.forEach(match => {
+      const [playerA, playerB] = match;
+      const indexA = players.findIndex(p => p.name === playerA);
+      const indexB = players.findIndex(p => p.name === playerB);
+      const [newRatingA, newRatingB] = calculateElo(
+        ratings[indexA],
+        ratings[indexB],
+        match.result
+      );
+      updatedRatings[indexA] = newRatingA;
+      updatedRatings[indexB] = newRatingB;
+    });
+    setRatings(updatedRatings);
+  }, [players, matches, ratings]);
 
   return (
-    <div>
-      <p>
-        <h1>player1</h1>
-        {player1.name}: {player1Rating}
-      </p>
-      <p>
-        <h1>player2</h1>
-        
-        {player2.name}: {player2Rating}
-      </p>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        {players.map((player, index) => (
+          <tr key={player.name}>
+            <td>{player.name}</td>
+            <td>{ratings[index]}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 };
 
