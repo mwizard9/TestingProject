@@ -16,11 +16,11 @@ const CounterApp = () => {
 
   return (
     <div>
-      <img id="image1" onClick={() => handleClick("image1")} />
+      <img id="image1" src='nighttime.jpeg' style={{ height: '500px', width: '500px' }} onClick={() => handleClick("image1")} />
       <p>{count.image1}</p>
-      <img id="image2" onClick={() => handleClick("image2")} />
+      <img id="image2" src='portait.jpeg' style={{ height: '500px', width: '500px' }} onClick={() => handleClick("image2")} />
       <p>{count.image2}</p>
-      <img id="image3" onClick={() => handleClick("image3")} />
+      <img id="image3" src='daytime.jpeg' style={{ height: '500px', width: '500px' }} onClick={() => handleClick("image3")} />
       <p>{count.image3}</p>
     </div>
   );
