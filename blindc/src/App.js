@@ -4,6 +4,7 @@ import CameraTest from './Components/CameraTest';
 import Compare from './Components/Compare';
 import CounterApp from './Components/CounterApp';
 import TodoList from './Components/Delete';
+import Crud from './Components/Edit';
 import Elo from './Components/Elo';
 import ImageVoting from './Components/ImageVoting';
 
@@ -21,6 +22,7 @@ function App() {
      <CameraTest/>
      <VotingCounter/>
      <TodoList/>
+     <Crud/>
       
     </div>
   );
