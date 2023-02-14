@@ -1,5 +1,6 @@
 
 import './App.css';
+import Ant from './Components/Ant';
 import CameraTest from './Components/CameraTest';
 import Compare from './Components/Compare';
 import CounterApp from './Components/CounterApp';
@@ -16,6 +17,7 @@ import VotingCounter from './Components/VotingCounter';
 function App() {
   return (
     <div className="App">
+      <Ant/>
       <CounterApp/>
       <SelectImage/>
      <ImageVoting/>
