@@ -1,4 +1,5 @@
 
+import { Calendar } from 'antd';
 import './App.css';
 import Ant from './Components/Ant';
 import CameraTest from './Components/CameraTest';
@@ -12,12 +13,14 @@ import ImageVoting from './Components/ImageVoting';
 import RandomImage from './Components/RandomImage';
 import SelectImage from './Components/SelectImage';
 import VotingCounter from './Components/VotingCounter';
+import Calender from './daily work/Calender';
 
 
 function App() {
   return (
     <div className="App">
       <Ant/>
+      <Calender/>
       <CounterApp/>
       <SelectImage/>
      <ImageVoting/>
