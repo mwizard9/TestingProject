@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CRUD Example</title>
+  </head>
+  <body>
+    <h1>CRUD Example</h1>
+    <hr>
+    <h2>Create Record</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br><br>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br><br>
+      
+      <button type="button" onclick="createRecord()">Create</button>
+    </form>
+    
+    <hr>
+    
+    <h2>Read Records</h2>
+    <ul id="records"></ul>
+    
+    <hr>
+    
+    <h2>Update Record</h2>
+    <form>
+      <label for="updateId">ID:</label>
+      <input type="text" id="updateId" name="updateId"><br><br>
+      
+      <label for="updateName">Name:</label>
+      <input type="text" id="updateName" name="updateName"><br><br>
+      
+      <label for="updateEmail">Email:</label>
+      <input type="email" id="updateEmail" name="updateEmail"><br><br>
+      
+      <button type="button" onclick="updateRecord()">Update</button>
+    </form>
+    
+    <hr>
+    
+    <h2>Delete Record</h2>
+    <form>
+      <label for="deleteId">ID:</label>
+      <input type="text" id="deleteId" name="deleteId"><br><br>
+      
+      <button type="button" onclick="deleteRecord()">Delete</button>
+    </form>
+
+    <script>
+      var records = [];
+      var id = 1;
+      
+      function createRecord() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var record = {
+          id: id,
+          name: name,
+          email: email
+        };
+        records.push(record);
+        id++;
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+      }
+      
+      function readRecords() {
+        var list = document.getElementById("records");
+        list.innerHTML = "";
+        for (var i = 0; i < records.length; i++) {
+          var record = records[i];
+          var item = document.createElement("li");
+          item.innerHTML = "ID: " + record.id + ", Name: " + record.name + ", Email: " + record.email;
+          list.appendChild(item);
+        }
+      }
+      
+      function updateRecord() {
+        var id = parseInt(document.getElementById("updateId").value);
+        var name = document.getElementById("updateName").value;
+        var email = document.getElementById("updateEmail").value;
+        for (var i = 0; i < records.length; i++) {
+          if (records[i].id === id) {
+            records[i].name = name;
+            records[i].email = email;
+          }
+        }
+        document.getElementById("updateId").value =""
+        "";
+    document.getElementById("updateName").value = "";
+    document.getElementById("updateEmail").value = "";
+  }
+  
+  function deleteRecord() {
+    var id = parseInt(document.getElementById("deleteId").value);
+    for (var i = 0; i < records.length; i++) {
+      if (records[i].id === id) {
+        records.splice(i, 1);
+      }
+    }
+    document.getElementById("deleteId").value = "";
+  }
+</script>
+  </body>
+</html>
