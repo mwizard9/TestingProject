@@ -12,12 +12,16 @@ import RandomImage from './Components/RandomImage';
 import SelectImage from './Components/SelectImage';
 import VotingCounter from './Components/VotingCounter';
 import Calender from './daily work/Calender';
+import ImageGallery from './daily work/Count';
+import Test from './daily work/Test';
 
 
 function App() {
   return (
     <div className="App">
-      <Ant/>
+      <Test/>
+      <ImageGallery/>
+      {/* <Ant/>
       <Calender/>
       <CounterApp/>
       <SelectImage/>
@@ -25,7 +29,7 @@ function App() {
      <CameraTest/>
      <VotingCounter/>
      <TodoList/>
-     <Crud/>
+     <Crud/> */}
       
     </div>
   );
