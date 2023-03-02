@@ -13,14 +13,16 @@ import SelectImage from './Components/SelectImage';
 import VotingCounter from './Components/VotingCounter';
 import Calender from './daily work/Calender';
 import ImageGallery from './daily work/Count';
+import Sidebar from './daily work/Production';
 import Test from './daily work/Test';
 
 
 function App() {
   return (
     <div className="App">
-      <Test/>
-      <ImageGallery/>
+      <Sidebar/>
+      {/* <Test/>
+      <ImageGallery/> */}
       {/* <Ant/>
       <Calender/>
       <CounterApp/>
