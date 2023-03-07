@@ -20,9 +20,9 @@ import Test from './daily work/Test';
 function App() {
   return (
     <div className="App">
-      <Sidebar/>
-      {/* <Test/>
-      <ImageGallery/> */}
+      {/* <Sidebar/> */}
+       <Test/>
+      <ImageGallery/>
       {/* <Ant/>
       <Calender/>
       <CounterApp/>
